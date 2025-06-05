@@ -463,7 +463,8 @@ bool fetchEquipmentList_Airtable() {
   currentMaxItems = 0; // Clear current list
 
   String filterFormula = "filterByFormula=({Assigned Bag}='"; // <--- CHANGE "Assigned Bag" if your field name is different
-  filterFormula += currentAssignedBagID;
+  // filterFormula += currentAssignedBagID;
+  filterFormula += urlEncode(currentAssignedBagName);
   filterFormula += "')";
   
   String equipmentTableNameEncoded = urlEncode(AIRTABLE_TABLE_NAME); // AIRTABLE_TABLE_NAME should be "Equipment Pieces" or your equivalent
